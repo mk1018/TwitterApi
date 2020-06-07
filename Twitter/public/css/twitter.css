@@ -1,0 +1,22 @@
+.main_card{
+    margin: 10px 0px 10px 0px; /*上右下左 */
+}
+
+.main_card img{
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  30px;       /* ※縦横を同値に */
+    height: 30px;       /* ※縦横を同値に */
+    margin: 5px 0px 5px 15px; /*上右下左 */
+}
+
+.main_card h5{
+    margin: 10px 0px 0px 0px; /*上右下左 */
+}
+
+.main_card #screen_name{
+    margin: 0px 0px 5px 0px; /*上右下左 */
+}
+
+.main_card #text{
+    margin: 5px 0px 5px 0px; /*上右下左 */
+}

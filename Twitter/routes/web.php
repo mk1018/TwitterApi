@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tweetlist', 'ApiController@my_tweet');
+Route::get('/my_tweet', 'ApiController@my_tweet');
+Route::get('/tweet_search/{class}', 'ApiController@Standard_search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

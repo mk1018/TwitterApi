@@ -11,6 +11,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/jLPMaster/jquery-1.6.1.min.js') }}" ></script>
+    <script src="{{ asset('js/jLPMaster/jquery-jLinkPreview-1.0.0-min.js') }}" ></script>
+    <script src="{{ asset('js/jLPMaster/jquery-jLinkPreview-1.0.0.js') }}" ></script>
+    <script src="{{ asset('js/twitter.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +22,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/twitter.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jLinkPreview.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -33,7 +39,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item"><a href="/tweet_search/動物"   class="nav-link">動物</a></li>
+                        <li class="nav-item"><a href="/tweet_search/有名人" class="nav-link">有名人</a></li>
+                        <li class="nav-item"><a href="/tweet_search/特技"   class="nav-link">特技</a></li>
+                        <li class="nav-item"><a href="/tweet_search/面白"   class="nav-link">面白</a></li>
+                        <li class="nav-item"><a href="/tweet_search/漫画"   class="nav-link">漫画</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

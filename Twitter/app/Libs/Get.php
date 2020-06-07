@@ -11,11 +11,11 @@ class Get
     public function __construct(){
         $call = new Auth();
         $this->bearer_token = $call->bearer_token();
-
     }
 
     public function index(){
-        $arr = $this->my_tweet();
+        // $arr = $this->my_tweet();
+        $arr = $this->Standard_search();
         return $arr;
         // $this->bearer_token();
     }
@@ -34,6 +34,7 @@ class Get
         // パラメータ
         $params = array(
             'screen_name' => '@Mk1018Web' ,
+            // 'screen_name' => '@mklife1018' ,
             'count' => 10 ,
         ) ;
 
@@ -94,22 +95,24 @@ class Get
         return $arr;
     }
 
-    private function Standard_search(){
+    public function Standard_search($class){
         $bearer_token = $this->bearer_token ;	// ベアラートークン
         $request_url = 'https://api.twitter.com/1.1/search/tweets.json' ;	// リクエストURL
 
         // パラメータ
         $params = array(
-            'p' => 'from%3Atwitterdev',
+            // 'p' => 'from%3Atwitterdev',
+            'q' => '猫:(',
+            // "q" => $class." min_retweets:849",
             'result_type' => 'mixed',
-            'count' => 2
+            'count' => 101
         ) ;
 
         // パラメータがある場合
         if ( $params ) {
             $request_url .= '?' . http_build_query( $params ) ;
         }
-
+// dd($request_url);
         // リクエスト用のコンテキスト
         $context = array(
             'http' => array(
@@ -119,7 +122,7 @@ class Get
                 ) ,
             ) ,
         ) ;
-// dd($request_url);
+
         // cURLを使ってリクエスト
         $curl = curl_init() ;
         curl_setopt( $curl, CURLOPT_URL, $request_url ) ;	// リクエストURL
@@ -143,8 +146,8 @@ class Get
         // JSONを変換
         // $obj = json_decode( $json ) ;	// オブジェクトに変換
         $arr = json_decode( $json, true ) ;	// 配列に変換
-dd($arr);
-        return $arr;
+// dd($arr);
+        return $arr['statuses'];
     }
 
 }
