@@ -17,4 +17,9 @@ class ApiController extends Controller
         return view('TweetList', ['tweet' => $call->my_tweet()]);
     }
 
+    public function Standard_search($class){
+        $call = new Get;
+        return view('TweetClass', ['tweet' => $call->Standard_search($class)]);
+    }
+
 }
